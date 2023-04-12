@@ -1,0 +1,20 @@
+{
+    "name": "-asdf",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node shard.js"
+    },
+    "engines": {
+        "node": "16.x"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "aoi.js": "^6.1.1",
+        "aoi.parser": "^1.2.1",
+        "dotenv": "^16.0.3",
+        "noblox.js": "^4.13.1"
+    }
+}
