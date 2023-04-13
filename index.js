@@ -37,3 +37,27 @@ bot.status({
     type: "PLAYING",
     time: 12
   });
+
+  bot.command({
+    name: "deletedata",
+    code: `
+  $awaitMessages[$channelID;$authorID;15s;deletemydata;awaitedcommandexample;Time has ended] 
+  $title[1;WARNING!!]
+  $description[Type "deletemydata" without the commas you have 20 seconds this command will delete all data stored of you in the bot and of this server]
+$color[1;#FF0000]
+$onlyif[$authorID==$botownerID;Owner only]`
+});
+
+bot.awaitedCommand({
+    name: "awaitedcommandexample",
+    code: `$djsEval[message.guild.leave();]
+    $wait[2s]
+    **$channelSendMessage[$channelID;**Data deleted Thank you for using our bot <3 i'll leave the server now**;false]**
+ $setGuildVar[placeId;Null]
+    $setGuildVar[ServerId;Null]
+    $setGuildVar[auth;Null]
+    $setGuildVar[Cookie;Null]
+    $setGuildVar[RankLimit;40]
+  `
+});
+//Data deleted Thank you for using our bot <3 i'll leave the server now
