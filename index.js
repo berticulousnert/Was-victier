@@ -35,7 +35,7 @@ async function startApp () {
 })
   
 bot.status({
-    text: "80% ish fresh start",
+    text: "90% ish fresh start",
     type: "PLAYING",
     time: 12
   });
