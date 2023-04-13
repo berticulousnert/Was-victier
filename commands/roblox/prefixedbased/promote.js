@@ -30,6 +30,8 @@ module.exports = {
     $onlyif[$getguildvar[Cookie]!=Null;{newEmbed: {description:**No Cookie currently set. You can set one by using the -setcookie command.**}{color:#E6E6FA}{footer:If you think this is a problem you may contact a developer.}}]
 
     $argsCheck[1;Args -promote (roblox_username)] 
+    $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[RankPerms]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[RankPerms]> to continue}{color:C3A78E}}]
+    $onlyif[$getGuildVar[RankPerms]!=Null;{newEmbed: {description: You must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}]
 
  `
 }

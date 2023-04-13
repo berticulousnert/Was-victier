@@ -9,10 +9,11 @@ module.exports = {
     $setGuildVar[auth;$slashOption[auth]]
     $setGuildVar[Cookie;$slashOption[cookie]]
     $setGuildVar[RankLimit;$slashOption[ranklock]]
+    $setGuildVar[RankPerms;$slashOption[rankperms]]
+    $setGuildVar[AdminRole;$slashOption[adminrole]]
     $onlyif[$isNumber[$slashOption[placeid]]==true;{newEmbed: {description:> **A PLACE_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
     $onlyif[$isNumber[$slashOption[groupid]]==true;{newEmbed: {description:> **A GROUP_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
     $onlyif[$isNumber[$slashOption[ranklock]]==true;{newEmbed: {description:> **A RankLock is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
-    $onlyPerms[administrator;This command has been locked to administrator only]
 
     `
 }

@@ -10,8 +10,8 @@ module.exports = {
     $createObject[$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};;Conent-Type:text/json]]
     $onlyif[$getGuildVar[placeId]!=Null;{newEmbed:{description:> Follow this **[tutorial](https://www.youtube.com/watch?v=ugvlmK6w_ng)** for instuctions on how to setup the panel and find your placeID }{color:C3A78E}}]
     $onlyif[$getGuildVar[auth]!=Null;{newEmbed:{description:> Follow this **[tutorial](https://www.youtube.com/watch?v=ugvlmK6w_ng)** for instuctions on how to setup the panel and find your Auth/Console key }{footer:**REMEMBER WHEN SETTING AUTH/CONSOLE KEY TO DO IT IN A PRIVATE CHANNEL**}{color:C3A78E}}]
-    $onlyif[$authorID==$botownerID;Must be bot owner as this command is in testing]
-    
+    $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[AdminRole]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[AdminRole]> to continue}{color:C3A78E}}]
+    $onlyif[$getGuildVar[AdminRole]!=Null;{newEmbed: {description: You must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}]
     `
 }
 

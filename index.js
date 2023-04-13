@@ -29,7 +29,9 @@ async function startApp () {
     RankLimit: "40",
     Cookie: "Null",
     placeId: "Null",
-    auth: "Null"
+    auth: "Null",
+    RankPerms: "Null",
+    AdminRole: "Null"
 })
   
 bot.status({
