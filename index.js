@@ -7,7 +7,7 @@ require('dotenv').config();
 const bot = new aoijs.AoiClient({
 token: process.env.token,
 prefix: "-",
-intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers"],
+intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildBans"],
 events : ["onMessage", "onInteractionCreate", "onGuildJoin", "onJoin"],
 sharding: true,
 aoiLogs: false
@@ -31,11 +31,13 @@ async function startApp () {
     placeId: "Null",
     auth: "Null",
     RankPerms: "Null",
-    AdminRole: "Null"
+    AdminRole: "Null",
+    banauthor: "",
+    banmessage: ""
 })
   
 bot.status({
-    text: "90% ish fresh start",
+    text: "95% ish fresh start",
     type: "PLAYING",
     time: 12
   });
