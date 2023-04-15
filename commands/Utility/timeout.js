@@ -7,9 +7,9 @@ module.exports = {
     $onlyIf[$findUser[$message[1]]!=$ownerID;Manz i cannot do nun to the server owner]
     $onlyIf[$rolePosition[$highestRole[$authorID]]<$rolePosition[$highestRole[$findUser[$message[1]]]]; You can't mute someone with higher or the same roles as you]
     $onlyIf[$rolePosition[$highestRole[$clientID]]<$rolePosition[$highestRole[$findUser[$message[1]]]];I can't mute someone with higher or the same roles as me (ps this could be wrong i prob just didnt find the user)]
-    $onlyPerms[kickmembers;User Missing permission:mutemembers]
-    $onlyBotPerms[kickmembers;Bot Missing permission:mutemembers]
-  $argsCheck[>1;How long should i timeout for???]
+    $argsCheck[>1;How long should i timeout for???]
+    $onlyPerms[kickmembers;You actually need kick perms to timeout]
+    $onlyBotPerms[kickmembers;Ion got no perms]
   $suppressErrors[Error bruh]
     `
   }

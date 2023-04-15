@@ -15,7 +15,8 @@ module.exports = {
     $addField[1;Ban;> Ban a user from a discord guild duhh <3\n> **Server invite:** None? ;true]
     $addField[1;Unban;> Dummy it does the opposite of ban <3\n> **Server invite:** None? ;true]
     $addField[1;Timeout;> Timeout/mute user in a guild <3\n> **Server invite:** None? ;true]
-    $addField[1;botinfo;> Shows the bot's info <3\n> **Server invite:** None? ;true]
+    $addField[1;Botinfo;> Shows the bot's info <3\n> **Server invite:** None? ;true]
+    $addField[1;Exile;> Exile a user from a roblox group <3\n> **Server invite:** None? ;true]
     $color[1;#C3A78E]
     
     `

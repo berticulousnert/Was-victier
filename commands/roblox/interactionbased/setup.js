@@ -28,6 +28,7 @@ $let[auth;$djsEval[const Cryptr = require('cryptr');
 
     $onlyif[$isNumber[$slashOption[groupid]]==true;{newEmbed: {description:> **A GROUP_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
    $suppressErrors[]
+   $onlyPerms[administator;You need ban permission]
 
     `
 }
