@@ -17,6 +17,7 @@ $let[Cookie;$djsEval[const Cryptr = require('cryptr');
     const decryptedString = cryptr.decrypt(encryptedString);
     return encryptedString;
 })();;true]]
+$ifAwaited[$slashOption[auth]==;{execute:null};]
 $setGuildVar[auth;$get[auth]] 
 $let[auth;$djsEval[const Cryptr = require('cryptr');
     const cryptr = new Cryptr('myTotallySecretKey');
@@ -28,7 +29,7 @@ $let[auth;$djsEval[const Cryptr = require('cryptr');
 
     $onlyif[$isNumber[$slashOption[groupid]]==true;{newEmbed: {description:> **A GROUP_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
    $suppressErrors[]
-   $onlyPerms[administator;You need ban permission]
+   $onlyPerms[administrator;You need admin permission]
 
     `
 }

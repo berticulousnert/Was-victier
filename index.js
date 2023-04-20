@@ -10,7 +10,16 @@ prefix: "-",
 intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildBans"],
 events : ["onMessage", "onInteractionCreate", "onGuildJoin", "onJoin"],
 sharding: true,
-aoiLogs: false
+aoiLogs: false,
+database : {
+  type: "aoi.db",
+  db: require("aoi.db"),
+  tables: ["victier"],
+  path: "./database/",
+  extraOptions: {
+      dbType: "KeyValue",
+  }
+},
 })
 
 const loader = new aoijs.LoadCommands(bot)
@@ -33,13 +42,15 @@ async function startApp () {
     RankPerms: "Null",
     AdminRole: "Null",
     banauthor: "",
-    banmessage: ""
+    banmessage: "",
+    test: ""
 })
   
 bot.status({
     text: "95% ish fresh start",
     type: "PLAYING",
-    time: 12
+    time: 12,
+    shardID: 4
   });
 
   bot.command({
@@ -64,6 +75,13 @@ bot.awaitedCommand({
         ** RankPerms:** <@&$getGuildVar[RankPerms]>]
   `
 });
+
+bot.awaitedCommand({
+  name: "null",
+  code: `$setGuildVar[auth;Null]
+`
+});
+
 
 
   bot.command({

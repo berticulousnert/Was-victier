@@ -12,6 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "aoi.db": "^1.1.0",
         "aoi.js": "^6.1.1",
         "aoi.parser": "^1.2.1",
         "cryptr": "^6.2.0",
