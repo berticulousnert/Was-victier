@@ -4,5 +4,6 @@ module.exports = [{
     code: `
     $giveRole[$guildID;$authorID;1095815747827138585]
 $color[1;#C3A78E]
-$description[Welcome to this server <@$authorID>!]`
+$description[Welcome to this server <@$authorID>!]
+$onlyif[$guildID==1095815747827138580;]`
 }]

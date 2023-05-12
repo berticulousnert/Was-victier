@@ -3,7 +3,7 @@ module.exports = {
     prototype: "slash",
     type: "interaction",
     code: `
-    $channelSendMessage[$channelID;{newEmbed:{description:> Congratulations you have successfully setup **victier!** now try the command to see if they work!! If you have any problem join our **[Support Server](https://discord.gg/uFq5DER6ba)** **MAKE SURE THIS COMMAND WAS RUN IN A PRIVATE CHANNEL IF IT WAS NOT DELETE THIS MESSAGE NOW!!**}{color:C3A78E}}{extraOptions:{interaction}};no]
+    $channelSendMessage[$channelID;{newEmbed:{description:> Congratulations you have successfully setup **Victier!** now try the command to see if they work!! If you have any problem join our **[Support Server](https://discord.gg/uFq5DER6ba)** **MAKE SURE THIS COMMAND WAS RUN IN A PRIVATE CHANNEL IF IT WAS NOT DELETE THIS MESSAGE NOW!!**}{color:C3A78E}}{extraOptions:{interaction}}};no]
     $setGuildVar[placeId;$slashOption[placeid]]
     $setGuildVar[ServerId;$slashOption[groupid]]
     $setGuildVar[RankLimit;$slashOption[ranklock]]
