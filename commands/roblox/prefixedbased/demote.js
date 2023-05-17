@@ -8,7 +8,7 @@ module.exports = {
     $djsEval[const noblox = require("noblox.js")
     noblox.demote($getguildvar[ServerId], $get[RobloxDemoteCache], "$get[Decrypted_Cookie]")] 
 $onlyif[$djsEval[const noblox = require("noblox.js")
-noblox.getRankInGroup($getguildvar[ServerId], $get[RobloxDemoteCache], "$getguildvar[Cookie]");true]<$getguildvar[RankLimit];<:icons_update1:1063597590505078814><:icons_update2:1063597625221320744>\n I Cannot rank Above/Below the $ordinal[$getguildvar[RankLimit]] rank in the group]
+noblox.getRankInGroup($getguildvar[ServerId], $get[RobloxDemoteCache], "$get[Decrypted_Cookie]");true]<$getguildvar[RankLimit];<:icons_update1:1063597590505078814><:icons_update2:1063597625221320744>\n I Cannot rank Above/Below the $ordinal[$getguildvar[RankLimit]] rank in the group]
 $let[RobloxDemoteCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;Conent-Type:text/json]]
 $let[RobloxUsername;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].name;Conent-Type:text/json]]
 $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
@@ -24,5 +24,6 @@ $onlyif[$getGuildVar[ServerId]!=Null;{newEmbed: {description:Is their even a ser
 $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[RankPerms]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[RankPerms]> to continue}{color:C3A78E}}]
 $onlyif[$getGuildVar[RankPerms]!=Null;{newEmbed: {description:Is their even a rankperms role set?}{color:C3A78E}}]
 $onlyif[$getGuildVar[Cookie]!=Null;{newEmbed:{description:> No Cookie found follow this **[tutorial](https://www.youtube.com/watch?v=eUd47kPxZvQ)** for instuctions on to find your roblox cookie. }{footer:**REMEMBER WHEN SETTINGS COOKIE DO IT IN A PRIVATE CHANNEL**}{color:C3A78E}}]
+$suppressErrors[Error feel free to contact me]
  `
 }

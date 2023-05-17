@@ -16,6 +16,6 @@ module.exports = {
     $let[after;$commandsCount]
     $updateCommands
     $let[before;$commandsCount]
-    $onlyForIDs[$botOwnerID;964024743172915220;Not owner]
+    $onlyForIDs[964024743172915220;Not owner]
     ` 
     }

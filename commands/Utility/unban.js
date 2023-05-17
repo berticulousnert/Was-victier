@@ -6,6 +6,6 @@ module.exports = {
    $argsCheck[1;Please Provide Use ID To Unban]
    $onlyPerms[banmembers;You need ban permission]
    $onlyBotPerms[banmembers;I don't have ban perms]
-$suppressErrors[Either the person is already unbanned or person does not exist]
+$suppressErrors[Either the person is already unbanned or person does not exist either way feel free to contact me]
    `
    }

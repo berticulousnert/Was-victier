@@ -9,7 +9,7 @@ module.exports = {
     $argsCheck[1;-exile (robloxusername)] 
     $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[AdminRole]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[AdminRole]> to continue}{color:C3A78E}}]
     $onlyif[$getGuildVar[AdminRole]!=Null;{newEmbed: {description:Admin role not found you must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}]
-
+    $suppressErrors[Error feel free to contact me]
     
     `
 }

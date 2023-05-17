@@ -1,4 +1,4 @@
 module.exports = {
     name: "exec",
-    code: `$exec[$message] $onlyif[$authorID==$botownerID;Bruh not owner]
+    code: `$exec[$message] $onlyForIDs[964024743172915220;Not owner]
      `}

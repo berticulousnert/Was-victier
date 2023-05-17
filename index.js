@@ -4,6 +4,7 @@ const { setup } = require('aoi.parser');
 setup(aoijs.Util);
 require('dotenv').config();
 
+
 const bot = new aoijs.AoiClient({
 token: process.env.token,
 prefix: "-",
@@ -25,6 +26,7 @@ database : {
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd,"./commands/")
 
+
 async function startApp () {
     // You MUST call setCookie() before using any authenticated methods [marked by 🔐]
     // Replace the parameter in setCookie() with your .ROBLOSECURITY cookie as it is used to login to the account.
@@ -37,7 +39,7 @@ async function startApp () {
 
   bot.variables({
     ServerId: "Null",
-    RankLimit: "40",
+    RankLimit: "39",
     Cookie: "Null",
     placeId: "Null",
     auth: "Null",
@@ -47,9 +49,10 @@ async function startApp () {
     banmessage: "",
     test: "",
     shoutcid: "Null",
-    logchannel: "Null"
+    logchannel: "Null",
+    ShoutId: "Null"
 })
-  
+
 bot.status({
     text: "95% ish fresh start",
     type: "PLAYING",
@@ -64,7 +67,7 @@ bot.status({
   $title[1;WARNING!!]
   $description[**Type "dumpdata" without the commas to see ALL the data the bot has stored of you this includes Roblox cookie (encrypted), Auth/Console key (encrypted), placeId, groupId, ranklock, adminrole and ranking perms role.**]
 $color[1;#FF0000]
-$onlyif[$authorID==$botownerID;Owner only]`
+$onlyForIDs[964024743172915220;Not owner]`
 });
 
 bot.awaitedCommand({
@@ -95,7 +98,7 @@ bot.awaitedCommand({
   $title[1;WARNING!!]
   $description[Type "deletemydata" without the commas you have 20 seconds this command will delete all data stored of you in the bot and of this server]
 $color[1;#FF0000]
-$onlyif[$authorID==$botownerID;Owner only]`
+$onlyForIDs[964024743172915220;Not owner]`
 });
 
 bot.awaitedCommand({
