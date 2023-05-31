@@ -17,7 +17,7 @@ module.exports = {
     $addField[1;Timeout;> Timeout/mute user in a guild <3\n> **Server invite:** None? ;true]
     $addField[1;Botinfo;> Shows the bot's info <3\n> ( has a slash command ) **Server invite:** None? ;true]
     $addField[1;Exile;> Exile a user from a roblox group <3\n> **Server invite:** None? ;true]
-    $addField[1;Shout;> Shout's a message to the linked group <3\n> **Server invite:** None? ;true]
+    $addField[1;Shout;> Shout's a message to the linked group ( has a slash command ) <3\n> **Server invite:** None? ;true]
     $color[1;#C3A78E]
     
     `

@@ -2,7 +2,7 @@ module.exports = {
     name: "setplaceid",
     aliases: "setpid",
     code: `
-    $description[> The Group_ID has been successfully been set to **$getGuildVar[placeId]**]
+    $description[> The Place ID has been successfully been set to **$getGuildVar[placeId]**]
     $color[1;#C3A78E]
     $wait[1s]
     $setGuildVar[placeId;$message[1]]

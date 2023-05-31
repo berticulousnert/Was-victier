@@ -3,7 +3,9 @@ const noblox = require('noblox.js')
 const { setup } = require('aoi.parser');
 setup(aoijs.Util);
 require('dotenv').config();
-
+const { IgApiClient } = require('instagram-private-api');
+// Initialize the Instagram API client
+const ig = new IgApiClient();
 
 const bot = new aoijs.AoiClient({
 token: process.env.token,
@@ -25,6 +27,20 @@ database : {
 
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd,"./commands/")
+
+const username = 'capz.supreme';
+const password = 'Nathan12$';
+
+async function login() {
+  // Provide your Instagram account credentials
+  ig.state.generateDevice(username);
+  await ig.account.login(username, password);
+  
+  const userId = await ig.user.getIdByUsername('x_xx_chelsey');
+const thread = ig.entity.directThread([userId.toString()]);
+await thread.broadcastText('Message from node');
+}
+
 
 
 async function startApp () {
