@@ -3,9 +3,6 @@ const noblox = require('noblox.js')
 const { setup } = require('aoi.parser');
 setup(aoijs.Util);
 require('dotenv').config();
-const { IgApiClient } = require('instagram-private-api');
-// Initialize the Instagram API client
-const ig = new IgApiClient();
 
 const bot = new aoijs.AoiClient({
 token: process.env.token,
@@ -56,10 +53,9 @@ async function startApp () {
 })
 
 bot.status({
-    text: "95% ish fresh start Members $allMembersCount",
+    text: "100% Members $allMembersCount",
     type: "PLAYING",
-    time: 12,
-    shardID: 4
+    time: 12
   });
 
   bot.command({

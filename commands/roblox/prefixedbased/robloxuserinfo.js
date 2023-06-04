@@ -18,6 +18,6 @@ module.exports = {
     
     $createObject[$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};;Conent-Type:text/json]]
     $argsCheck[1;username?]
-    $suppressErrors[How shocking there is an error... does the user exist? feel free to contact]
+    $suppressErrors[{newEmbed: {title:Error}{description:Is the username correct?}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
    `
     }

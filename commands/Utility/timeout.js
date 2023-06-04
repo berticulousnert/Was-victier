@@ -10,6 +10,6 @@ module.exports = {
     $argsCheck[>1;How long should i timeout for???]
     $onlyPerms[kickmembers;You actually need kick perms to timeout]
     $onlyBotPerms[kickmembers;Ion got no perms]
-  $suppressErrors[Error feel free to contact me]
+    $suppressErrors[{newEmbed: {title:Error}{description:There shouldn't be an error but oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
     `
   }

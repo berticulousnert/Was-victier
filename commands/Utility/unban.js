@@ -5,7 +5,6 @@ module.exports = {
    $color[1;Green]
    $argsCheck[1;Please Provide Use ID To Unban]
    $onlyPerms[banmembers;You need ban permission]
-   $onlyBotPerms[banmembers;I don't have ban perms]
-$suppressErrors[Either the person is already unbanned or person does not exist either way feel free to contact me]
+   $onlyBotPerms[banmembers;I don't have ban perms]$suppressErrors[{newEmbed: {title:Error}{description:Check if the user is already banned}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
    `
    }

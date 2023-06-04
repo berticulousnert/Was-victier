@@ -24,6 +24,6 @@ $onlyif[$getGuildVar[ServerId]!=Null;{newEmbed: {description:Is their even a ser
 $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[RankPerms]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[RankPerms]> to continue}{color:C3A78E}}]
 $onlyif[$getGuildVar[RankPerms]!=Null;{newEmbed: {description:Is their even a rankperms role set?}{color:C3A78E}}]
 $onlyif[$getGuildVar[Cookie]!=Null;{newEmbed:{description:> No Cookie found follow this **[tutorial](https://www.youtube.com/watch?v=eUd47kPxZvQ)** for instuctions on to find your roblox cookie. }{footer:**REMEMBER WHEN SETTINGS COOKIE DO IT IN A PRIVATE CHANNEL**}{color:C3A78E}}]
-$suppressErrors[Error feel free to contact me]
+$suppressErrors[{newEmbed: {title:Error}{description:Does the bot account have permission to demote? and is the user account below the bot account?}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
  `
 }

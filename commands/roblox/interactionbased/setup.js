@@ -29,7 +29,7 @@ $let[auth;$djsEval[const Cryptr = require('cryptr');
 
     $onlyif[$isNumber[$slashOption[groupid]]==true;{newEmbed: {description:> **A GROUP_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
    $onlyPerms[administrator;You need admin permission]
-   $suppressErrors[error]
+   $suppressErrors[{newEmbed: {title:Error}{description:there shouldn't be an error here be oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}{options:{ephemeral}}{extraOptions:{interaction}}}]
     `
 }
 
