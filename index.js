@@ -56,7 +56,7 @@ async function startApp () {
 })
 
 bot.status({
-    text: "95% ish fresh start",
+    text: "95% ish fresh start Members $allMembersCount",
     type: "PLAYING",
     time: 12,
     shardID: 4
