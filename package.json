@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node shard.js"
+        "start": "node index.js",
+        "test": "node ."
     },
     "engines": {
         "node": "16.x"

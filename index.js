@@ -53,7 +53,7 @@ async function startApp () {
 })
 
 bot.status({
-    text: "100% Members $allMembersCount",
+    text: "Officially stable $allMembersCount members",
     type: "PLAYING",
     time: 12
   });
