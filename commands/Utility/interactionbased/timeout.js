@@ -2,14 +2,35 @@ module.exports = {
     name: "timeout",
     type: "interaction",
     prototype: "slash",
-    code: `$timeoutMember[$guildId;$findMember[$guildID;$slashOption[user];$slashOption[howlong];no;$slashOption[reason]]
-    $channelSendMessage[$ChannelID;Muted <@$findMember[$slashOption[user];yes]>
-    $onlyIf[$memberExists[$findUser[$slashOption[user]]]==true;Can't find a member with this ID/name/mention in the server]
-    $onlyIf[$findUser[$slashOption[user]]!=$ownerID;Manz i cannot do nun to the server owner]
-    $onlyIf[$rolePosition[$highestRole[$authorID]]<$rolePosition[$highestRole[$findUser[$slashOption[user]]]]; You can't mute someone with higher or the same roles as you]
-    $onlyIf[$rolePosition[$highestRole[$clientID]]<$rolePosition[$highestRole[$findUser[$slashOption[user]]]];I can't mute someone with higher or the same roles as me (ps this could be wrong i prob just didnt find the user)]
-    $onlyPerms[kickmembers;You actually need kick perms to timeout]
-    $onlyBotPerms[kickmembers;I need kick perms]
-    $suppressErrors[{newEmbed: {title:Error}{description:There shouldn't be an error but oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}{options:{ephemeral}}{extraOptions:{interaction}}}]
+    code: ` $interactionReply[;{newEmbed: {color:Red} {description:> Timed out user for $message[2]\n > Reason:  $if[$slashOption[reason]==;No reason provided;$slashOption[reason]]}};;;everyone;]
+     $timeoutMember[$guildID;$findMember[$slashOption[user];yes];$slashOption[duration];no;$if[$slashOption[reason]==;No reason provided;$slashOption[reason]];]
+    $onlyIf[$slashOption[duration]!=;you must provide a duration, the maximum is up to 28 days{extraOptions:{interaction}}]
+    $onlyIf[$rolePosition[$highestRole[$authorID]]<$rolePosition[$highestRole[$findMember[$slashOption[user];yes]]]; **$username** You can't timeout that user{extraOptions:{interaction}}]
+    $onlyIf[$highestRole[$findMember[$slashOption[user];yes]]!=$highestRole[$authorID];**$username** They have the same role as me{extraOptions:{interaction}}]
+    $onlyIf[$rolePosition[$highestRole[$clientID]]<$rolePosition[$highestRole[$findMember[$slashOption[user];yes]]];**$username** They have a higher role than you{extraOptions:{interaction}}]
+    $onlyIf[$highestRole[$findMember[$slashOption[user];yes]]!=$highestRole[$clientID];**$username** They have a higher role than me or the same role as me{extraOptions:{interaction}}]
+    $onlyIf[$findMember[$slashOption[user];yes]!=$ownerID; **$username** You can't timeout the server owner dummy{extraOptions:{interaction}}]
+    $onlyIf[$findMember[$slashOption[user];yes]!=$authorID; **Correct usage: \`\`\`js
+    -timeout < @user > < duration > < reason >\`\`\`**{extraOptions:{interaction}}]
+    $onlyIf[$findMember[$slashOption[user];yes]!=$clientID;**$username** never try that{extraOptions:{interaction}}]
+    $onlyIf[$hasPerms[$guildid;$authorid;moderatemembers]==true;**$username** You are missing **\`MODERATE_MEMBERS\`** permission{extraOptions:{interaction}}]
+    $onlyIf[$hasPerms[$guildid;$clientid;moderatemembers]==true;**$username** I am missing **\`MODERATE_MEMBERS\`** permission{extraOptions:{interaction}}]
+    $onlyIf[$slashOption[duration]<=28d;you can't timeout for more than 28 days... lol{extraOptions:{interaction}}]
+    $onlyIf[$slashOption[duration]<=3w;you can't timeout for more than 28 days nuh uh{extraOptions:{interaction}}]
+    $onlyIf[$slashOption[duration]<=86400s;you can't timeout for more than 28 days duhhh{extraOptions:{interaction}}]
+    $suppressErrors[
+      {newEmbed: 
+        {title:Error}
+        {description:There shouldn't be an error but oh well}
+        {footer: if this error continues feel free to contact a dev}
+        {color:E6E6FA}
+      }
+      {options:
+        {ephemeral}
+      }
+      {extraOptions:
+        {interaction}
+      }
+      ]
     `
   }

@@ -14,6 +14,6 @@ module.exports = {
     $onlyIf[$mentioned[1]!=$clientID;how about i ban you how the turns have tabled]
     $onlyIf[$isMentioned[$mentioned[1]]==true;Who am i gonna ban?]
     $onlyIf[$hasPerms[$guildID;$authorID;banmembers]==true;Looks like someone doesn't have ban perms]
-    $onlyBotPerms[banmembers;Ion have ban perms]
+    $onlyClientPerms[banmembers;Ion have ban perms]
     $suppressErrors[{newEmbed: {title:Error}{description:There shouldn't be an error but oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]`
    }

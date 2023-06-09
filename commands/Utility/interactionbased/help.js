@@ -21,6 +21,19 @@ module.exports = {
   {field:Exile:> Exile a user from a roblox group <3\n> **Server invite:** None?:yes }
   {field:Shout:> Shout's a message to the linked group ( has a slash command) <3\n> **Server invite:** None?:yes }
   {color:#C3A78E}}{extraOptions:{interaction}};no]
-  $suppressErrors[{newEmbed: {title:Error}{description:There shouldn't be an error but oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}{options:{ephemeral}}{extraOptions:{interaction}}}]
+  $suppressErrors[
+    {newEmbed: 
+      {title:Error}
+      {description:There shouldn't be an error but oh well}
+      {footer: if this error continues feel free to contact a dev}
+      {color:E6E6FA}
+    }
+    {options:
+      {ephemeral}
+    }
+    {extraOptions:
+      {interaction}
+    }
+    ]
   `
 }
