@@ -19,6 +19,19 @@ module.exports = {
             })();true]]
     
     $createObject[$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};;Conent-Type:text/json]
-    $suppressErrors[{newEmbed: {title:Error}{description:Is the username correct?}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}{options:{ephemeral}}{extraOptions:{interaction}}}]`
+    $suppressErrors[
+{newEmbed: 
+  {title:Error}
+  {description:Do you have a cookie set? and can the bot account shout in the group?}
+  {footer: if this error continues feel free to contact a dev}
+  {color:E6E6FA}
+}
+{options:
+  {ephemeral}
+}
+{extraOptions:
+  {interaction}
+}
+]`
     }
     

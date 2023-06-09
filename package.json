@@ -13,7 +13,7 @@
     "license": "ISC",
     "dependencies": {
         "aoi.db": "^1.1.0",
-        "aoi.js": "^6.2.6",
+        "aoi.js": "github:akaruidevelopment/aoi.js#v6",
         "aoi.parser": "^1.2.6",
         "axios": "^1.4.0",
         "bottleneck": "^2.19.5",
