@@ -19,8 +19,6 @@
         "bottleneck": "^2.19.5",
         "cryptr": "^6.2.0",
         "dotenv": "^16.0.3",
-        "instagram_mqtt": "^1.2.2",
-        "instagram-private-api": "^1.45.3",
         "noblox.js": "^4.13.1"
     }
 }
