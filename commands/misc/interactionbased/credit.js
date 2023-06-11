@@ -12,5 +12,6 @@ module.exports = {
   {field:Dodogames:> My friend also stole some commands <3\n> **Server invite:** .gg/vYdpYu9JaQ \n [Website](https://www.youtube.com/watch?v=dQw4w9WgXcQ):yes }
   {field:Lightner:>  My friend of 2 years crazy long tbh also helped me with the project <3\n> **Server invite:** None? lightner dm me if u want a server here\n [Website](https://www.youtube.com/watch?v=dQw4w9WgXcQ):yes }
   {color:#C3A78E}}{extraOptions:{interaction}};no]
+  $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}{extraOptions:{interaction}}}]
   `
 }

@@ -19,6 +19,7 @@ module.exports = {
     $addField[1;Exile;> Exile a user from a roblox group <3\n> **Server invite:** None? ;true]
     $addField[1;Shout;> Shout's a message to the linked group  <3\n> **Server invite:** None? ;true]
     $color[1;#C3A78E]
+    $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}}]
     $suppressErrors[{newEmbed: {title:Error}{description:There shouldn't be an error but oh well}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
     
     `

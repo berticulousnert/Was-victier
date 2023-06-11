@@ -18,6 +18,7 @@ module.exports = {
     $onlyIf[$slashOption[duration]<=28d;you can't timeout for more than 28 days... lol{extraOptions:{interaction}}]
     $onlyIf[$slashOption[duration]<=3w;you can't timeout for more than 28 days nuh uh{extraOptions:{interaction}}]
     $onlyIf[$slashOption[duration]<=86400s;you can't timeout for more than 28 days duhhh{extraOptions:{interaction}}]
+    $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}{extraOptions:{interaction}}}]
     $suppressErrors[
       {newEmbed: 
         {title:Error}

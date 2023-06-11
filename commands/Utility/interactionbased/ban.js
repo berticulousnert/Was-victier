@@ -16,6 +16,7 @@ module.exports = {
     $onlyIf[$isMentioned[$slashOption[user]==true;Who am i gonna ban?{extraOptions:{interaction}}]
     $onlyIf[$hasPerms[$guildID;$authorID;banmembers]==true;Looks like someone doesn't have ban perms{extraOptions:{interaction}}]
     $onlyBotPerms[banmembers;Ion have ban perms]
+    $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}{extraOptions:{interaction}}}]
     $suppressErrors[
         {newEmbed: 
           {title:Error}

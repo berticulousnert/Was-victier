@@ -17,6 +17,7 @@ return decryptedString;
     $argsCheck[1;-exile (robloxusername)] 
     $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[AdminRole]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[AdminRole]> to continue}{color:C3A78E}}]
     $onlyif[$getGuildVar[AdminRole]!=Null;{newEmbed: {description:Admin role not found you must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}]
+    $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}}]
     $suppressErrors[{newEmbed: {title:Error}{description:Does the bot account have permission to exile users and is the user's account below the bot account?}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]
     `
 }

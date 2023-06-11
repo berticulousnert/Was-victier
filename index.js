@@ -49,7 +49,9 @@ async function startApp () {
     test: "",
     shoutcid: "Null",
     logchannel: "Null",
-    ShoutId: "Null"
+    ShoutId: "Null",
+    blacklist: "false",
+    blacklistreason: "Null"
 })
 
 bot.status({

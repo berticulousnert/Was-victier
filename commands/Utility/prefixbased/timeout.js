@@ -17,6 +17,7 @@ $onlyIf[$hasPerms[$guildid;$clientid;moderatemembers]==true;**$username** I am m
 $onlyIf[$message[2]<=28d;you can't timeout for more than 28 days... lol]
 $onlyIf[$message[2]<=3w;you can't timeout for more than 28 days nuh uh]
 $onlyIf[$message[2]<=86400s;you can't timeout for more than 28 days duhhh]
+$onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}}]
 $argsCheck[>0;you need to provide a user to timeout with the duration (providing a reason will be recorded in audit logs)]
 `
 }

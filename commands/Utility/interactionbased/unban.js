@@ -6,7 +6,8 @@ module.exports = {
     $unban[$guildID;$slashOption[userid]]
 $onlyPerms[banmembers;You need ban permission]
 $onlyClientPerms[banmembers;I don't have ban perms]
-   $suppressErrors[
+$onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}{extraOptions:{interaction}}}]   
+$suppressErrors[
     {newEmbed: 
       {title:Error}
       {description:There shouldn't be an error but oh well}

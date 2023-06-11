@@ -10,5 +10,6 @@ module.exports = {
     $addField[1;Bcrypt;> Used to encrypt the Auth/Console key and Cookie so that if there is a breach which is unlikely your data is safe\n> **Server invite:** None?\n [Website](https://www.npmjs.com/package/bcrypt);False]
     $addField[1;DodoGames;> My friend also stole some commands <3\n> **Server invite:** .gg/vYdpYu9JaQ\n [Website](https://www.youtube.com/watch?v=dQw4w9WgXcQ);False]
     $addField[1;Lightner;> My friend of 2 years crazy long tbh also helped me with the project <3\n> **Server invite:** None? lightner dm me if u want a server here\n [Website](https://www.youtube.com/watch?v=dQw4w9WgXcQ);False]
-    `
+    
+    $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}}]`
 }
