@@ -5,7 +5,6 @@ module.exports = {
     code:` $channelSendMessage[$channelID;{newEmbed:{title:Successful!}{color:#E6E6FA}
         {description:> <:icons_Correct:1063605864323362897> **$get[RobloxUsername]** rank is now **$djsEval[const noblox = require("noblox.js")
         rankName = noblox.getRankNameInGroup($getguildvar[ServerId], $get[RobloxPromoteCache], "$get[Decrypted_Cookie]");true]**}{footer:Hi from bot dev}}{extraOptions:{interaction}};no]
-    $wait[1s]
         $djsEval[const noblox = require("noblox.js")
 noblox.promote($getguildvar[ServerId], $get[RobloxPromoteCache], "$get[Decrypted_Cookie]")] 
 $onlyif[$djsEval[const noblox = require("noblox.js")

@@ -9,8 +9,8 @@ module.exports = {
     noblox.demote($getguildvar[ServerId], $get[RobloxDemoteCache], "$get[Decrypted_Cookie]")] 
 $onlyif[$djsEval[const noblox = require("noblox.js")
 noblox.getRankInGroup($getguildvar[ServerId], $get[RobloxDemoteCache], "$get[Decrypted_Cookie]");true]<$getguildvar[RankLimit];<:icons_update1:1063597590505078814><:icons_update2:1063597625221320744>\n I Cannot rank Above/Below the $ordinal[$getguildvar[RankLimit]] rank in the group]
-$let[RobloxDemoteCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;Conent-Type:text/json]]
-$let[RobloxUsername;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].name;Conent-Type:text/json]]
+$let[RobloxDemoteCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;content-Type:text/json]]
+$let[RobloxUsername;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].name;content-Type:text/json]]
 $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
 const cryptr = new Cryptr('myTotallySecretKey');
 (async () => {
