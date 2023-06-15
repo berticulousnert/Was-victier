@@ -38,13 +38,13 @@ module.exports = {
         ]
         $let[RobloxRankCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;Content-Type:text/json]]
 
-   $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotallySecretKey');
-(async () => {
-const encryptedString = '$getGuildVar[Cookie]'
-const decryptedString = cryptr.decrypt(encryptedString);
-return decryptedString;
-})();;true]]
+    $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
+        const cryptr = new Cryptr('myTotallySecretKey',{ pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt]});
+    (async () => {
+       const encryptedString = '$getGuildVar[Cookie]'
+    const decryptedString = cryptr.decrypt(encryptedString);
+        return decryptedString;
+    })();;true]]
 $let[Roblox_UserId;$djsEval[const noblox = require("noblox.js");
 (async () => {
 let ids = await noblox.getIdFromUsername(["$message[1]"]);

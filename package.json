@@ -17,6 +17,7 @@
         "aoi.js": "github:akaruidevelopment/aoi.js#v6",
         "aoi.parser": "^1.2.6",
         "axios": "^1.4.0",
+        "bcrypt": "^5.1.0",
         "bottleneck": "^2.19.5",
         "cryptr": "^6.2.0",
         "dotenv": "^16.0.3",

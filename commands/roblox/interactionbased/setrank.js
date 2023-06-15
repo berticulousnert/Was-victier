@@ -36,7 +36,7 @@ return ids;
 $let[RobloxUsername;$slashOption[robloxusername]]
 
 $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotallySecretKey');
+const cryptr = new Cryptr('myTotallySecretKey', { pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt]});
 (async () => {
 const encryptedString = '$getGuildVar[Cookie]'
 const decryptedString = cryptr.decrypt(encryptedString);

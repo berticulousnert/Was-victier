@@ -3,15 +3,16 @@ module.exports = {
     prototype: "slash",
     type: "interaction",
     code: `
-    $channelSendMessage[$channelID;{newEmbed:{description:> The Auth/Console Key key has been successfully been set to **$getGuildVar[auth]** **encrypted**} {color: E6E6FA}}{extraOptions:{interaction}};no] 
+    $channelSendMessage[$channelID;{newEmbed:{description:> The Auth/Console Key key has been successfully been set and* **encrypted**} {color: E6E6FA}}{extraOptions:{interaction}};no] 
     $setGuildVar[auth;$get[auth]] 
     $let[auth;$djsEval[const Cryptr = require('cryptr');
-        const cryptr = new Cryptr('myTotallySecretKey');
-    (async () => {
-        const encryptedString = cryptr.encrypt('$slashOption[id]');
-        const decryptedString = cryptr.decrypt(encryptedString);
-        return encryptedString;
-    })();;true]]
+    const cryptr = new Cryptr('myTotallySecretKey', { pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt] });
+(async () => {
+    const encryptedString = cryptr.encrypt('$message[1]');
+    const decryptedString = cryptr.decrypt(encryptedString);
+    return encryptedString;
+})();;true]]
+$setGuildVar[salt;$random[1;2000]]
     $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[AdminRole]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[AdminRole]> to continue}{color:C3A78E}}{options:{ephemeral}}{extraOptions:{interaction}}]
     $onlyif[$getGuildVar[AdminRole]!=Null;{newEmbed: {description: You must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}{options:{ephemeral}}{extraOptions:{interaction}}]
     $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}{extraOptions:{interaction}}}]

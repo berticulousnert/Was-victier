@@ -10,22 +10,23 @@ module.exports = {
     $setGuildVar[RankPerms;$slashOption[rankperm]]
     $setGuildVar[AdminRole;$slashOption[adminrole]]
     $setGuildVar[Cookie;$get[Cookie]] 
-$let[Cookie;$djsEval[const Cryptr = require('cryptr');
-    const cryptr = new Cryptr('myTotallySecretKey');
+    $let[Cookie;$djsEval[const Cryptr = require('cryptr');
+    const cryptr = new Cryptr('myTotallySecretKey', { pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt] });
 (async () => {
-    const encryptedString = cryptr.encrypt('$slashOption[cookie]');
+    const encryptedString = cryptr.encrypt('$message[1]');
     const decryptedString = cryptr.decrypt(encryptedString);
     return encryptedString;
 })();;true]]
 $ifAwaited[$slashOption[auth]==;{execute:null};]
 $setGuildVar[auth;$get[auth]] 
 $let[auth;$djsEval[const Cryptr = require('cryptr');
-    const cryptr = new Cryptr('myTotallySecretKey');
+    const cryptr = new Cryptr('myTotallySecretKey', { pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt] });
 (async () => {
-    const encryptedString = cryptr.encrypt('$slashOption[auth]');
+    const encryptedString = cryptr.encrypt('$message[1]');
     const decryptedString = cryptr.decrypt(encryptedString);
     return encryptedString;
 })();;true]]
+$setGuildVar[salt;$random[1;2000]]
 
     $onlyif[$isNumber[$slashOption[groupid]]==true;{newEmbed: {description:> **A GROUP_ID is a integer how did you find a string? 🖐️🤓🖐️**}{color:C3A78E}}]
    $onlyPerms[administrator;You need admin permission]

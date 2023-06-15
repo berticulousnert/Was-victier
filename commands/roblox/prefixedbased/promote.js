@@ -12,7 +12,7 @@ module.exports = {
     $let[RobloxPromoteCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;Content-Type:text/json]]
     $let[RobloxUsername;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].name;Content-Type:text/json]]
     $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
-        const cryptr = new Cryptr('myTotallySecretKey');
+        const cryptr = new Cryptr('myTotallySecretKey',{ pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt]});
     (async () => {
        const encryptedString = '$getGuildVar[Cookie]'
     const decryptedString = cryptr.decrypt(encryptedString);
@@ -30,3 +30,5 @@ module.exports = {
 
  `
 }
+
+//$suppressErrors[{newEmbed: {title:Error}{description:Does the bot account have permission to promote? and is the user account below the bot account?}{footer: if this error continues feel free to contact a dev}{color:E6E6FA}}]

@@ -11,13 +11,13 @@ $onlyif[$djsEval[const noblox = require("noblox.js")
 noblox.getRankInGroup($getguildvar[ServerId], $get[RobloxPromoteCache], "$get[Decrypted_Cookie]");true]<$getguildvar[RankLimit];<:icons_update1:1063597590505078814><:icons_update2:1063597625221320744>\n I Cannot rank Above/Below the $getguildvar[RankLimit] rank in the group {options:{ephemeral}}{extraOptions:{interaction}}]
 $let[RobloxPromoteCache;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].id;Conent-Type:text/json]]
 $let[RobloxUsername;$httpRequest[https://users.roblox.com/v1/usernames/users;POST; {"usernames":["$message[1]"],"excludeBannedUsers":true};data[0].name;Conent-Type:text/json]]
-$let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotallySecretKey');
-(async () => {
-const encryptedString = '$getGuildVar[Cookie]'
-const decryptedString = cryptr.decrypt(encryptedString);
-return decryptedString;
-})();;true]]
+ $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
+        const cryptr = new Cryptr('myTotallySecretKey',{ pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt]});
+    (async () => {
+       const encryptedString = '$getGuildVar[Cookie]'
+    const decryptedString = cryptr.decrypt(encryptedString);
+        return decryptedString;
+    })();;true]]
 $onlyif[$getGuildVar[RankLimit]!=Null;{newEmbed: {description:Is their even a ranklimit set?}{color:C3A78E}}{options:{ephemeral}}{extraOptions:{interaction}}]
 $onlyif[$getGuildVar[ServerId]!=Null;{newEmbed: {description:Is their even a serverId set?}{color:C3A78E}}{extraOptions:{interaction}}]
 $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[RankPerms]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[RankPerms]> to continue}{color:C3A78E}}{options:{ephemeral}}{extraOptions:{interaction}}]

@@ -8,13 +8,13 @@ module.exports = {
        noblox.shout($getGuildVar[ServerId], "$message", "$get[Decrypted_Cookie]")
         ]
 
-    $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
-    const cryptr = new Cryptr('myTotallySecretKey');
-(async () => {
-   const encryptedString = '$getGuildVar[Cookie]'
-const decryptedString = cryptr.decrypt(encryptedString);
-    return decryptedString;
-})();true]]
+        $let[Decrypted_Cookie;$djsEval[const Cryptr = require('cryptr');
+        const cryptr = new Cryptr('myTotallySecretKey',{ pbkdf2Iterations: 10000, saltLength: $getGuildVar[salt]});
+    (async () => {
+       const encryptedString = '$getGuildVar[Cookie]'
+    const decryptedString = cryptr.decrypt(encryptedString);
+        return decryptedString;
+    })();;true]]
 $onlyif[$hasRoles[$guildID;$authorID;$getGuildVar[AdminRole]]==true;{newEmbed:{description: You are required to have the <@&$getGuildVar[AdminRole]> to continue}{color:C3A78E}}]
 $onlyif[$getGuildVar[AdminRole]!=Null;{newEmbed: {description: You must first use the /setup command to setup the bot! pretty self explanitory}{color:C3A78E}}]
 $onlyIf[$getGlobalUserVar[blacklist]==false;{newEmbed:{title:Blacklisted!}{description:> Reason: $getGlobalUserVar[blacklistreason;$authorID]}{footer:Join the Support server to resolve}{color:Red}}]

@@ -8,7 +8,7 @@ const bot = new aoijs.AoiClient({
 token: process.env.token,
 prefix: "-",
 intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildBans"],
-events : ["onMessage", "onInteractionCreate", "onGuildJoin", "onJoin"],
+events : ["onMessage", "onInteractionCreate", "onGuildJoin", "onJoin", "onMessageDelete", "onBanAdd" ],
 sharding: true,
 aoiLogs: false,
 database : {
@@ -25,6 +25,16 @@ database : {
 const loader = new aoijs.LoadCommands(bot)
 loader.load(bot.cmd,"./commands/")
 
+bot.guildJoinCommand({//command
+  channel: "",//the channel where <code> will be sent to
+  code: `$cacheMembers[$guildID;no]`//message sent to <channel>
+  });
+
+  
+  bot.joinCommand({ //command
+    channel: "", //channel where it will log
+    code: `$cacheMembers[$guildID;no]` //Message sent to <channel>
+    })
 
 async function startApp () {
     // You MUST call setCookie() before using any authenticated methods [marked by 🔐]
@@ -51,7 +61,8 @@ async function startApp () {
     logchannel: "Null",
     ShoutId: "Null",
     blacklist: "false",
-    blacklistreason: "Null"
+    blacklistreason: "No Reason Given.",
+    salt: "10"
 })
 
 bot.status({
@@ -60,36 +71,13 @@ bot.status({
     time: 12
   });
 
-  bot.command({
-    name: "dumpdata",
-    code: `
-  $awaitMessages[$channelID;$authorID;15s;dumpdata;dumpdata;Time has ended] 
-  $title[1;WARNING!!]
-  $description[**Type "dumpdata" without the commas to see ALL the data the bot has stored of you this includes Roblox cookie (encrypted), Auth/Console key (encrypted), placeId, groupId, ranklock, adminrole and ranking perms role.**]
-$color[1;#FF0000]
-$onlyForIDs[964024743172915220;Not owner]`
-});
 
-bot.awaitedCommand({
-    name: "dumpdata",
-    code: `$color[1;#FF0000]
-    $description[1;> Cookie: $getGuildVar[Cookie]\n
-     **Auth/Console Key:** $getGuildVar[auth]\n
-      **PlaceId:** $getGuildVar[placeId]\n
-       **GroupId:** $getGuildVar[ServerId]\n
-        **RankLock:** $getGuildVar[RankLimit]\n
-        **AdminRole:** <@&$getGuildVar[AdminRole]>\n
-        ** RankPerms:** <@&$getGuildVar[RankPerms]>]
-  `
-});
 
 bot.awaitedCommand({
   name: "null",
   code: `$setGuildVar[auth;Null]
 `
 });
-
-
 
   bot.command({
     name: "deletedata",
